@@ -1,7 +1,7 @@
 ﻿#Script that will query your Azure VM's and return sizes and average CPU usage over the last 7 days.
 
 
-Login-AzureRmAccount
+#Login-AzureRmAccount
 
 $vms = Get-AzureRmVM | select * 
 
@@ -13,7 +13,7 @@ foreach ($vm in $vms) {
 
 $obj = new-object psobject
 
-$hw = $hwtotal | ?{ $_.name -eq $vm.HardwareProfile.vmsize }
+$hw = $hwtotal | Where-Object{ $_.name -eq $vm.HardwareProfile.vmsize }
 
 Add-Member -InputObject $obj -MemberType NoteProperty -Name ResourceGroupName -Value $vm.ResourceGroupName
 Add-Member -InputObject $obj -MemberType NoteProperty -Name Name -Value $vm.Name
