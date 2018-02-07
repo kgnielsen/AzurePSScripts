@@ -1,4 +1,4 @@
-﻿#Script that will query your Azure VM's and return sizes and average CPU usage over the last 7 days.
+﻿#Script that will query your Azure VM's and return sizes and average CPU usage over the last 7 days..
 
 
 #Login-AzureRmAccount
